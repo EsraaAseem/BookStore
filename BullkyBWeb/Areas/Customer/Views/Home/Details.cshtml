@@ -1,0 +1,55 @@
+﻿@model ShoppingCart
+<form method="post" class="row ">
+    <input asp-for="ProductId" hidden/>
+    <div class="container card row ">
+        <div class="card-header row text-start bg-black text-light align-content-center align-items-center">
+            <div class="  col-lg-8 ">
+                <h3 class="text-warning">@Model.product.Title</h3>
+                <h5  class="text-danger">@Model.product.Author</h5>
+            </div>
+            <div class="  col-lg-4  row">
+                <button class="btn btn-secondary mt-2 me-1 col-5">Hard Cover</button>
+                <button class="btn btn-danger mt-2 col-5 ">Fiching</button>
+            </div>
+        </div>
+        <div class="card-body row">
+            <div class="text col-md-9">
+                <p class="col-4">ISBN:@Model.product.ISBN</p>
+                <p class="col-4">List Price:@Model.product.ListPrice</p>
+                <div class=" col-md-10 col-lg-8">
+                     <div style="border-bottom:1px gray solid" class="row text-center" >
+                         <h6 class="col-3 text-danger">Quantity:</h6>
+                        <p class="col-3">1 - 50</p>
+                        <p class="col-3">51-100</p>
+                        <p class="col-3">100+</p>
+
+                     </div>
+                    <div class="row text-center" style="color:maroon;">
+                        <h5 class="col-3 text-danger">Price</h5>
+                        <p class="col-3">@Model.product.Price</p>
+                        <p class="col-3">@Model.product.Price50</p>
+                        <p class="col-3">@Model.product.Price100</p>
+
+                    </div>
+                 </div>
+                <p class="text-primary mt-4 mb-4"> @Model.product.Description</p>
+
+            </div>
+            <div class="Image col-md-3">
+                <img src="@Model.product.ImageUrl" height="250px" width="100%" />
+            </div>
+        </div>
+        <div class="card-footer mt-4">
+            <div class="text-end  row mb-4 justify-content-center mt-5">
+                <label class="col-3">Count</label>
+                <input type="number" class="col-9" style="border:0 solid gray; outline:gray; border-radius:5px;" asp-for="Count"/>
+            </div>
+            <div class="text-center row justify-content-center">
+                <a class="btn btn-success col-md-5 col-lg-4 me-1 ms-1 mb-3" asp-action="Index">Back To Home</a>
+                <button class="btn btn-primary col-md-5 col-lg-4 me-1 ms-1 mb-3 " type="submit">Add To Cart</button>
+
+            </div>
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,11 @@
+﻿@model int
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="container text-center">
+        <h1 class="text-center text-info">Order Confiramtion </h1>
+        <div class="text-danger">orderId=@Model</div>
+        <img src="~/Imgs/rupixen-com-Q59HmzK38eQ-unsplash.jpg" width="400px" height="300px" />
+
+        <h4 class="text-danger">order shiped Successfully</h4>
+        <a class="btn btn-info text-light p-2" asp-action="Details" asp-area="Admin" asp-route-Id="@Model" asp-controller="Order"> Home</a>
+    </div>
+</div>

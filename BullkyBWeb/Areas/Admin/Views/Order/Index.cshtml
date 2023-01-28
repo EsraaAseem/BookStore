@@ -1,0 +1,52 @@
+﻿@{
+     ViewData["Title"] = "";
+    var status = Context.Request.Query["OrderStatus"];
+    var pending = "text-primary";
+    var inprocess = "text-primary";
+    var all = "text-primary";
+    var aproved = "text-primary";
+    var completed = "text-primary";
+    switch(status){
+        case "Pending":
+        pending = " active text-danger";
+            break;
+        case "Processing":
+            inprocess = "active text-danger";
+            break;
+        case "Shipped":
+            completed = " active text-danger";
+            break;
+            case "Approved":
+            aproved = " active text-danger";
+            break;
+        default:
+            all = "active text-danger";
+            break;
+    }
+}
+
+
+<div class="container row">
+    <div class="col-12 row mb-5 mt-5">
+        <h2 class=" col-12 col-md-4 text-info mb-4 mb-md-1 text-center text-md-start ">Order List</h2>
+        <div class="col-md-8 col-12 text-md-end mt-5 mt-md-1 " style="position:absolute; right:0px;">
+          
+        </div>
+    </div>
+    <table width="100%" id="tblDate" class="mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section Scripts{
+    <script src="~/js/Order.js"></script>
+}

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="container row">
+    <div class="col-12 row mb-3">
+        <h1 class="col-8 ">Category</h1>
+        <div class="col-4  text-end" style="position:absolute; right:0px;">
+            <a class="nav-link col-8 text-light text-center btn btn-primary p-2" asp-action="Upsert">Create</a>
+
+        </div>
+    </div>
+    <table width="100%" id="tblDate">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>DisOrder</th>
+            <th></th>
+        </tr>
+    </thead>
+</table>
+</div>
+@section Scripts{
+    <script src="~/js/Category.js"></script>
+}

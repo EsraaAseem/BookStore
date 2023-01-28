@@ -1,0 +1,57 @@
+﻿@model BullkyB.Model.ViewModel.ShoppingCartMV
+<form method="post" class="row ">
+  <div class="container card row ">
+        <div class="card-header row text-start bg-black text-light align-content-center align-items-center pt-2 pb-2">
+                <h4 class="col-md-9 mt-3 mb-3">Product Name</h4>
+                <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-outline-info  col-md-3 text-info mt-3 mb-3">Continus Shopping</a>
+        </div>
+       
+        <div class="card-body row">
+            @foreach(var item in Model.CartList)
+          {
+            <div class="text col-lg-8 row mb-3">
+                <div class=" d-none d-lg-block col-lg-2 ">
+                    <img src="@item.product.ImageUrl" height="150px" width="100%" />
+                </div>
+               <div class="col-lg-10 col-md-12 ">
+                   <h3> @item.product.Title</h3>
+                    <p>@item.product.Description</p>
+               </div>
+
+            </div>
+            <div class=" col-lg-4 row">
+                <div class="col-sm-5 row mt-3">
+                    <p class=""><span>@item.product.Price</span> &nbsp;x &nbsp;<span >@item.Count</span> </p>
+                </div>
+                <div class=" col-sm-5 justify-content-between">
+                    <a class="btn btn-primary text-center col-5 mt-3" asp-action="Plus" asp-route-Id="@item.Id" style="height:40px;"> <i class=" bi bi-plus-square"></i> </a>
+                    <a class="btn btn-warning text-center col-5 mt-3" asp-action="Minus" asp-route-Id="@item.Id" style="height:40px;"> <i class="bi bi-dash-square"></i> </a>
+
+                </div>
+                <div class="col-sm-2 ">
+                    <a class="btn btn-success text-center mt-3 col-8 col-sm-12" asp-action="Remove" asp-route-Id="@item.Id" style="@item.Id" > <i class="bi bi-trash-fill"></i>  </a>
+                </div>
+            </div>
+        }
+        <div>
+           
+        </div>
+            <div class="mb-2 col-md-3 text-md-end row">
+            <li class="d-flex justify-content-between my-0 p-3  text-end" style=" border:1px solid #cccc; border-radius:5px;">
+                <div>
+                  <small class="text-muted text-info">Total(USD)</small>
+                </div>
+                <span class="text-muted text-info">@Model.OrderHeader.OrderTotal$</span>
+            </li>
+            </div>
+        </div>
+
+
+        <div class="card-footer mt-4 mb-4">
+            <div class="text-end row justify-content-end">
+                <a class="btn btn-success col-md-5 col-lg-4 me-1 ms-1 mb-3 "   asp-action="Summary">Summary</a>
+
+            </div>
+        </div>
+  </div>
+</form>

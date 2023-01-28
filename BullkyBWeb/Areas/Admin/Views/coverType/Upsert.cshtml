@@ -1,0 +1,30 @@
+﻿ @model BullkyB.Model.ViewModel.coverTypeMV
+@{
+    ViewData["Title"] = "Upsert";
+}
+<h1>@(Model.coverType.Id==0?"Create":"Update")</h1>
+<form method="post">
+    <input asp-for="coverType.Id" hidden />
+   <div class="col-12 row">
+       <div class="col-10 row mb-4 text-center">
+            <div class="col-3 text-black">Name</div>
+            <input asp-for="coverType.coverName" class="col-8 ">
+            <span asp-validation-for="coverType.coverName" class="text-danger"></span>
+       </div>
+       
+       <div class="col-10 row mt-4 ms-2 d-flex justify-content-center">
+           @if(Model.coverType.Id==0){
+                 <button type="submit" class="btn btn-primary col-5 col-lg-3 me-3 ">Create</button>
+           }
+           else{
+                <button type="submit" class="btn btn-primary col-5 col-lg-3 me-2 ">Update</button>
+           }
+            <a class="nav-link col-5 col-lg-3 text-light text-center btn btn-secondary" asp-action="Index">Back</a>
+       </div>
+   </div>
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
