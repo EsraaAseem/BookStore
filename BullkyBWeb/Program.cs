@@ -6,8 +6,6 @@ using BullkyB.DataAccess.Repository;
 using Utility;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Stripe;
-using Microsoft.CodeAnalysis.Options;
-using Microsoft.EntityFrameworkCore.Internal;
 using BullkyB.DataAccess.IDbInilizer;
 
 var builder = WebApplication.CreateBuilder(args);

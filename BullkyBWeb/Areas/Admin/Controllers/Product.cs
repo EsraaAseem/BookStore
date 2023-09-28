@@ -78,26 +78,7 @@ namespace BullkyBWeb.Areas.Admin.Controllers
                     }
                     productmv.Product.ImageUrl = @"\Imgs\products\" + fileName + extention;
                 }
-                //var WWWRoutePath = _hostEnvironment.WebRootPath;
-                //if(file!=null)
-                //{
-                //    var FileName = Guid.NewGuid().ToString();
-                //    var upload = Path.Combine(WWWRoutePath, @"Product\Images");
-                //    var Exaintion = Path.GetExtension(file.FileName);
-                //    if(productmv.Product.ImageUrl!=null)
-                //    {
-                //        var oldImg = Path.Combine(WWWRoutePath, productmv.Product.ImageUrl.TrimStart('\\'));
-                //        if (System.IO.File.Exists(oldImg))
-                //        {
-                //            System.IO.File.Delete(oldImg);
-                //        }
-                //    }
-                //    using (var fileStream =new FileStream( Path.Combine(upload, FileName + Exaintion), FileMode.Create))
-                //    {
-                //        file.CopyTo(fileStream);
-                //    }
-                //    productmv.Product.ImageUrl = @"\Product\Images" + FileName + Exaintion;
-                //}
+              
                 if (productmv.Product.Id == 0)
                 {
                     _unitOfWrok.Product.Add(productmv.Product);

@@ -8,9 +8,9 @@ namespace BullkyB.DataAccess.Repository.IRepository
 {
     public interface IUnitOfWrok
     {
-        ICategoryRepository Category { get;  }
-        IcoverTypeRepository coverType { get; }
-        IProductRepository Product { get; }
+        ICategoryRepository Category {get;}
+        IcoverTypeRepository coverType {get;}
+        IProductRepository Product {get;}
         ICompanyRepository Company { get; }
         IApplicationUserRepository ApplicationUser { get; }
         IShoppingCartRepository ShoppingCart { get; }
